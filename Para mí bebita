@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta Virtual</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      margin-top: 100px;
+      position: relative;
+    }
+
+    .envelope {
+      width: 300px;
+      height: 200px;
+      background: pink;
+      margin: 0 auto;
+      position: relative;
+      clip-path: polygon(0 40%, 50% 0, 100% 40%, 100% 100%, 0% 100%);
+      box-shadow: 0 0 10px rgba(255, 192, 203, 0.5);
+    }
+
+    .letter {
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      width: 260px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+      transition: top 1s ease;
+    }
+
+    .envelope:hover .letter {
+      top: 20px;
+    }
+
+    .letter p {
+      margin: 0;
+      font-size: 18px;
+      color: #cc005f;
+    }
+
+    .button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #cc005f;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .flowers {
+      margin-top: 60px;
+    }
+
+    .flower {
+      display: inline-block;
+      margin: 0 10px;
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle at center, #00aaff, #005577);
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .flower::before, .flower::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle at center, #00aaff, #005577);
+      border-radius: 50%;
+    }
+
+    .flower::before {
+      top: -20px;
+      left: -30px;
+    }
+
+    .flower::after {
+      top: -20px;
+      left: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="envelope">
+      <div class="letter">
+        <p>¿Puedo ser tu novio?</p>
+      </div>
+    </div>
+    <button class="button" onclick="alert('¡Gracias por aceptar (o por pensarlo)!')">Cerrar</button>
+    <div class="flowers">
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
+    </div>
+  </div>
+</body>
+</html>
